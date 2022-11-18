@@ -56,32 +56,35 @@ export default function Quiz(props) {
   };
 
   return (
-    <div className="w-screen h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-700 via-blue-800 to-gray-900">
+    <div className="w-screen h-full min-h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-700 via-blue-800 to-gray-900">
       {finished === false ? (
         <>
-          <button
-            onClick={singOut}
-            className="flex items-center gap-1 absolute top-3 right-5 text-sm 
-         text-gray-200 font-semibold bg-black py-2 px-3 rounded-full hover:bg-gray-900 transition duration-200 ease-out"
-          >
-            LOG OUT
-            <CgLogOut className="text-lg ml-1 " />
-          </button>
-          <div className="w-6/12 h-full flex justify-center items-center flex-col gap-5 text-gray-100 mx-auto">
-            <h1 className="text-5xl text-center w-full">
+          <div className="w-screen  flex justify-end p-2">
+            <button
+              onClick={singOut}
+              className="flex items-center gap-1 top-3 right-5 text-sm 
+        text-gray-200 font-semibold bg-black py-2 px-3 rounded-full hover:bg-gray-900 transition duration-200 ease-out
+       "
+            >
+              LOG OUT
+              <CgLogOut className="text-lg ml-1 " />
+            </button>
+          </div>
+          <div className="w-6/12 h-full flex justify-center items-center flex-col gap-5 text-gray-100 mx-auto max-[430px]:w-9/12  max-[768px]:pb-3">
+            <h1 className="text-5xl text-center w-full pt-8  max-[425px]:text-2xl max-[768px]:text-3xl">
               {questionId}# {data[questionId].question}
             </h1>
-            <div className="flex flex-col w-full justify-center items-center gap-4 text-xl">
-              <div className="border border-white w-8/12 text-center py-3 hover:bg-white hover:text-black transition duration-100 ease-in cursor-pointer" onClick={response} id="0">
+            <div className="flex flex-col w-full justify-center items-center gap-4 text-xl pt-3  max-[425px]:text-sm">
+              <div className="border border-white w-10/12 text-center py-3 hover:bg-white hover:text-black transition duration-100 ease-in cursor-pointer  " onClick={response} id="0">
                 {data[questionId].answers[0]}
               </div>
-              <div className="border border-white w-8/12 text-center py-3 hover:bg-white hover:text-black transition duration-100 ease-in cursor-pointer" onClick={response} id="1">
+              <div className="border border-white w-10/12 text-center py-3 hover:bg-white hover:text-black transition duration-100 ease-in cursor-pointer" onClick={response} id="1">
                 {data[questionId].answers[1]}
               </div>
-              <div className="border border-white w-8/12 text-center py-3 hover:bg-white hover:text-black transition duration-100 ease-in cursor-pointer" onClick={response} id="2">
+              <div className="border border-white w-10/12 text-center py-3 hover:bg-white hover:text-black transition duration-100 ease-in cursor-pointer" onClick={response} id="2">
                 {data[questionId].answers[2]}
               </div>
-              <div className="border border-white w-8/12 text-center py-3 hover:bg-white hover:text-black transition duration-100 ease-in cursor-pointer" onClick={response} id="3">
+              <div className="border border-white w-10/12 text-center py-3 hover:bg-white hover:text-black transition duration-100 ease-in cursor-pointer" onClick={response} id="3">
                 {data[questionId].answers[3]}
               </div>
             </div>
